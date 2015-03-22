@@ -1,0 +1,118 @@
+The data provided consist of measures of various features of a wearable device, taken across a group of subjects in a prescribed set of activities. The device generated signal information re: Body, Gravitational and Gyroscopic/Jerk acceleration, as well as frequency values based on Fast Fourier Transforms of the measures. Our objective is to provide a subset of the 561 variable measures provided,  including the mean and standard deviations of each of the signal measure types, for the subject and activity groups.
+
+Incoming Datasets:
+
+The input data files have the following shape and content:
+1. activity_labels.txt - 6 rows of 2 cols: 1) numbered 2) activity types -> a LABEL file
+2. subject_test.txt - 2947 rows of 1 col: id number of the subject that performed a specific activity, from a group of subjects called 'test'
+3. subject_train.txt - 7352 rows of 1 col: id number of the subject that performed a specific activity, from a group of subjects called 'train'
+features.txt - 561 rows of 2 cols: 1) rownumber 2) feature (measure) name -> a LABEL file
+4. y_test.txt - 2947 rows of 1 col: Activity number of the measured performance of a specific subject from the 'test' group-> an observation attribute list
+5. y_train.txt - 7352 rows of 1 col: activity number of the measured performance of a specific subject from the 'train' group -> an observation attribute list
+6. X_train.txt - 7352 rows of 561 cols: the measures by features (cols.) for every subject+activity in the training group
+7. X_test.txt - 2947 rows of 561 cols: the measures by features (cols.) for every subject+activity in the test group
+
+The target tidy data set will should enable the analysis of mean and standard deviation measures across all of the subjects and their activities.  Tidying will also consist of applying descriptive activity names and measure/feature names to the dataset.
+
+Transformations were performed under the following assumptions:
+* training and test subject data can be concatenated
+* the incoming order of subject/activity/measurement rows must be preserved in order to merge the files together
+
+Variables Description:
+
+1  actcode - Integer, Activity code, 1 - 6
+2  ACTIVITY - Factor w 6 levels, name of activities performed by subjects
+3	SUBJID - Int, ID number of subject
+4	group - Char, name of group subject was part of (TEST, TRAIN)
+------------------------- 
+all following variables are numeric, representing mean or stand deviations of relevant measures as described above, per subject per activity
+-------------------------
+5	tBodyAcc-mean()-X
+6	tBodyAcc-mean()-Y
+7	tBodyAcc-mean()-Z
+8	tBodyAcc-std()-X
+9	tBodyAcc-std()-Y
+10	tBodyAcc-std()-Z
+11	tGravityAcc-mean()-X
+12	tGravityAcc-mean()-Y
+13	tGravityAcc-mean()-Z
+14	tGravityAcc-std()-X
+15	tGravityAcc-std()-Y
+16	tGravityAcc-std()-Z
+17	tBodyAccJerk-mean()-X
+18	tBodyAccJerk-mean()-Y
+19	tBodyAccJerk-mean()-Z
+20	tBodyAccJerk-std()-X
+21	tBodyAccJerk-std()-Y
+22	tBodyAccJerk-std()-Z
+23	tBodyGyro-mean()-X
+24	tBodyGyro-mean()-Y
+25	tBodyGyro-mean()-Z
+26	tBodyGyro-std()-X
+27	tBodyGyro-std()-Y
+28	tBodyGyro-std()-Z
+29	tBodyGyroJerk-mean()-X
+30	tBodyGyroJerk-mean()-Y
+31	tBodyGyroJerk-mean()-Z
+32	tBodyGyroJerk-std()-X
+33	tBodyGyroJerk-std()-Y
+34	tBodyGyroJerk-std()-Z
+35	tBodyAccMag-mean()
+36	tBodyAccMag-std()
+37	tGravityAccMag-mean()
+38	tGravityAccMag-std()
+39	tBodyAccJerkMag-mean()
+40	tBodyAccJerkMag-std()
+41	tBodyGyroMag-mean()
+42	tBodyGyroMag-std()
+43	tBodyGyroJerkMag-mean()
+44	tBodyGyroJerkMag-std()
+45	fBodyAcc-mean()-X
+46	fBodyAcc-mean()-Y
+47	fBodyAcc-mean()-Z
+48	fBodyAcc-std()-X
+49	fBodyAcc-std()-Y
+50	fBodyAcc-std()-Z
+51	fBodyAcc-meanFreq()-X
+52	fBodyAcc-meanFreq()-Y
+53	fBodyAcc-meanFreq()-Z
+54	fBodyAccJerk-mean()-X
+55	fBodyAccJerk-mean()-Y
+56	fBodyAccJerk-mean()-Z
+57	fBodyAccJerk-std()-X
+58	fBodyAccJerk-std()-Y
+59	fBodyAccJerk-std()-Z
+60	fBodyAccJerk-meanFreq()-X
+61	fBodyAccJerk-meanFreq()-Y
+62	fBodyAccJerk-meanFreq()-Z
+63	fBodyGyro-mean()-X
+64	fBodyGyro-mean()-Y
+65	fBodyGyro-mean()-Z
+66	fBodyGyro-std()-X
+67	fBodyGyro-std()-Y
+68	fBodyGyro-std()-Z
+69	fBodyGyro-meanFreq()-X
+70	fBodyGyro-meanFreq()-Y
+71	fBodyGyro-meanFreq()-Z
+72	fBodyAccMag-mean()
+73	fBodyAccMag-std()
+74	fBodyAccMag-meanFreq()
+75	fBodyBodyAccJerkMag-mean()
+76	fBodyBodyAccJerkMag-std()
+77	fBodyBodyAccJerkMag-meanFreq()
+78	fBodyBodyGyroMag-mean()
+79	fBodyBodyGyroMag-std()
+80	fBodyBodyGyroMag-meanFreq()
+81	fBodyBodyGyroJerkMag-mean()
+82	fBodyBodyGyroJerkMag-std()
+83	fBodyBodyGyroJerkMag-meanFreq()
+84	angle(tBodyAccMean,gravity)
+85	angle(tBodyAccJerkMean),gravityMean)
+86	angle(tBodyGyroMean,gravityMean)
+87	angle(tBodyGyroJerkMean,gravityMean)
+88	angle(X,gravityMean)
+89	angle(Y,gravityMean)
+90	angle(Z,gravityMean)
+
+
+
